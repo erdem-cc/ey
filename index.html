@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkedin</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        html{
+            font-family: sans-serif;
+            color: white;
+            font-weight: lighter;
+        }
+        body{
+            background-color: rgb(0, 0, 0);
+        }
+
+        header{
+            max-height: fit-content;
+            background-color: #2E2E38;
+        }
+
+        .container{
+            padding: 10px;
+            background-color: #2E2E38;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+
+        .container > *{
+            flex: 1;
+            justify-content: center;
+            align-content: center;
+            
+
+        }
+
+        .container > input{
+            height: 25px;
+            flex-grow: 0;
+            flex-basis:300px;
+            background-color:rgba(255, 255, 255, 0.733);
+            border-radius: 5px;
+        }
+
+        .container > .img{
+            flex-grow: 0;
+            flex-basis: 100px;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .img > img{
+            height: 80px;
+            width: 80px;
+            position: relative;
+            bottom: 10px;
+        }
+ 
+
+        .container> nav{
+            display: flex;
+            justify-content: flex-end;
+            gap: 100px;
+            flex: 1;
+            font-size: 15px;
+        }
+
+        input[type="text"]{
+            padding-left: 10px;
+        }
+
+        nav > a{
+            text-decoration: none;
+            font-family: sans-serif;    
+            color: white;
+        }
+
+        nav > a:hover{
+            color:#ffe600;
+            padding-bottom: 3px;
+            border-bottom: 3px solid #ffe600;
+            transition-duration: 0.3s;
+        }
+
+        @media (max-width: 1200px){
+  
+
+            .container > nav{
+                justify-content: center;
+            }
+
+            .container >nav > a {
+                font-size: 1.5vw;
+            }
+        }
+
+        .contain-main{
+
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 100px;
+        }
+
+        .profile{
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+
+        .profile > div{
+            background-color: #545464;
+            border: 2px solid rgb(109, 105, 105);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+
+        #block1{
+            flex-basis: 120px;
+        }
+
+        #block1 > h2{
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .profile> div:hover{
+            background-color: #ffe600;
+            transition-duration: 0.3s;
+            color: black;
+        }
+
+        #block2{
+            flex-basis: 120px;
+        }
+
+        #block2 > input[type="text"]{
+            border-radius: 5px;
+            border: none;
+            height: 20px;
+            background-color:#ceced6;
+        }
+
+        .posts{
+            flex-basis: 800px;
+            flex-shrink: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .posts > div{
+            background-color: #545464;
+            padding: 10px;
+            border-radius: 5px;;
+        }
+
+        .posts>h2{
+            text-align: center;
+        }
+
+        .paragraph{
+            margin-top: 10px;
+            color: black;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: justify;
+        }
+
+        .up-down{
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        input[value="Valider"]{
+            color: green;
+            font-weight: bold;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        input[value="Refuser"]{
+            color:red;
+            font-weight: bold;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        input:hover{
+            background-color: #ffe600;
+            transition-duration: 0.3s;
+        }
+
+        .stats{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stats > #global{
+            padding: 10px;
+            flex-basis: 120px;
+            background-color: #545464;
+            border-radius: 5px;
+        }
+
+        #global > h2{
+            padding-bottom: 10px;
+        }
+
+        #global > p{
+            padding-top: 5px;
+        }
+
+        #global:hover{
+            background-color: #ffe600;
+            transition-duration: 0.3s;
+            color: black;
+        }
+
+        #block2 input{
+            padding: 5px;
+            border:none;
+            border-radius: 5px;
+        }
+        #block2 input[type="button"]{
+
+            margin-left: 5px;
+        }
+        #block2 input[type="button"]:hover{
+            background-color: black;
+            color:white;
+            transition-duration: 0.3s;
+        }
+        #block2 h2{
+            padding-bottom: 10px;
+        }
+
+        @media (max-width: 1000px){
+
+
+            .contain-main{
+                flex-direction: column;
+            }
+
+            .profile{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                text-align: center;
+            }
+            #block1{
+                flex-basis: 200px;
+            }
+
+            .posts{
+                padding: 0 10px 0 10px;
+            }
+
+            .stats{
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .stats #global{
+                flex-basis: 300px;
+                justify-content: center;
+                text-align: center;
+            }
+            
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="img">
+                <img src="./assets/logo.jpg">
+            </div>
+            <input type="text" placeholder="Recherche">
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Community</a>
+                <a href="#">Articles</a>
+                <a href="#">Help</a>
+                <a href="#">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="contain-main">
+        <div class="profile">
+            <div id="block1">
+                <h2>Hi, Erdem</h2>
+                <p>Your profile</p>
+                <p>Current mission: SOS VE</p>
+                <p>Next availability : none</p>    
+            </div>
+            <div id="block2">
+                <h2>Research profile</h2>
+                <input type="text" placeholder="Research">
+                <input type="button" value="Find">
+            </div>
+
+        </div>
+        <div class="posts">
+            <h2>Latest posts</h2>
+            <div id="post1">
+                <p>From: nobody</p>
+                <p>Date: </p>
+                <div class="paragraph">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum mollis ornare. Nullam at luctus neque. Sed ipsum tortor, consequat eget tortor ac, rutrum consequat nulla. In bibendum, urna vitae cursus fermentum, leo nulla vestibulum diam, in placerat tortor arcu vel arcu. Nam sed congue nibh, in eleifend lorem. Maecenas sed congue turpis. Vivamus lobortis, ex ac lacinia ornare, risus dolor placerat neque, quis tempor quam lorem in enim.
+                    </p>
+                    <p>Nam et tortor turpis. Proin convallis ut magna nec malesuada. Nulla ex lacus, convallis non rhoncus id, tristique id sem. Praesent a diam ac leo consequat venenatis. Integer accumsan malesuada ultricies. Nam sed lobortis nibh. Nunc quis odio imperdiet, malesuada felis ut, rutrum erat. Vivamus in neque orci. Ut augue neque, tristique at orci sit amet, condimentum imperdiet metus. Ut neque ipsum, sodales in turpis sit amet, luctus ornare dui. Duis ornare sit amet nulla ut iaculis.
+                    </p>
+                </div>
+                <div class="up-down">
+                    <input type="button" value="Valider">
+                    <input type="button" value="Refuser">
+                </div>
+            </div>
+            <div id="post2">
+                <p>From: nobody</p>
+                <p>Date: </p>
+                <div class="paragraph">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum mollis ornare. Nullam at luctus neque. Sed ipsum tortor, consequat eget tortor ac, rutrum consequat nulla. In bibendum, urna vitae cursus fermentum, leo nulla vestibulum diam, in placerat tortor arcu vel arcu. Nam sed congue nibh, in eleifend lorem. Maecenas sed congue turpis. Vivamus lobortis, ex ac lacinia ornare, risus dolor placerat neque, quis tempor quam lorem in enim.
+                    </p>
+                    <p>Nam et tortor turpis. Proin convallis ut magna nec malesuada. Nulla ex lacus, convallis non rhoncus id, tristique id sem. Praesent a diam ac leo consequat venenatis. Integer accumsan malesuada ultricies. Nam sed lobortis nibh. Nunc quis odio imperdiet, malesuada felis ut, rutrum erat. Vivamus in neque orci. Ut augue neque, tristique at orci sit amet, condimentum imperdiet metus. Ut neque ipsum, sodales in turpis sit amet, luctus ornare dui. Duis ornare sit amet nulla ut iaculis.
+                    </p>
+                </div>
+                <div class="up-down">
+                    <input type="button" value="Valider">
+                    <input type="button" value="Refuser">
+                </div>
+            </div>
+
+            <div id="post3">
+                <p>From: nobody</p>
+                <p>Date: </p>
+                <div class="paragraph">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum mollis ornare. Nullam at luctus neque. Sed ipsum tortor, consequat eget tortor ac, rutrum consequat nulla. In bibendum, urna vitae cursus fermentum, leo nulla vestibulum diam, in placerat tortor arcu vel arcu. Nam sed congue nibh, in eleifend lorem. Maecenas sed congue turpis. Vivamus lobortis, ex ac lacinia ornare, risus dolor placerat neque, quis tempor quam lorem in enim.
+                    </p>
+                    <p>Nam et tortor turpis. Proin convallis ut magna nec malesuada. Nulla ex lacus, convallis non rhoncus id, tristique id sem. Praesent a diam ac leo consequat venenatis. Integer accumsan malesuada ultricies. Nam sed lobortis nibh. Nunc quis odio imperdiet, malesuada felis ut, rutrum erat. Vivamus in neque orci. Ut augue neque, tristique at orci sit amet, condimentum imperdiet metus. Ut neque ipsum, sodales in turpis sit amet, luctus ornare dui. Duis ornare sit amet nulla ut iaculis.
+                    </p>
+                </div>
+                <div class="up-down">
+                    <input type="button" value="Valider">
+                    <input type="button" value="Refuser">
+                </div>
+            </div>
+        </div>
+        <div class="stats">
+            <div id="global">
+                <h2>Global stats</h2>
+                <p>Number of available staff: none</p>
+                <p>Lorem ipsum : ipsum</p>
+                <p>Nam et tortor turpis: Proin convallis</p>
+    
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
